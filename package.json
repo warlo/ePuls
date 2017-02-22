@@ -1,23 +1,31 @@
 {
-	"name": "ePuls",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"react": "~15.4.0",
-		"react-native": "0.41.2",
-		"react-native-router-flux": "^3.37.0"
-	},
-	"devDependencies": {
-		"babel-jest": "19.0.0",
-		"babel-preset-react-native": "1.9.1",
-		"jest": "19.0.0",
-		"react-test-renderer": "~15.4.0"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "ePuls",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "lint": "eslint app --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "react": "~15.4.0",
+    "react-native": "0.41.2",
+    "react-native-router-flux": "^3.37.0",
+    "react-native-tabs": "^1.0.9"
+  },
+  "devDependencies": {
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "eslint": "^3.16.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "jest": "19.0.0",
+    "react-test-renderer": "~15.4.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
