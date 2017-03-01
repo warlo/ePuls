@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Tabs from 'react-native-tabs';
+import Icon from 'react-native-vector-icons/Entypo';
 
 class TabView extends Component {
   state = {
@@ -54,13 +55,13 @@ class TabView extends Component {
       <View style={styles.container}>
         <Tabs
           selected={this.props.name}
-          onSelect={el => this.changeScene(el.props.name)}
+          onSelect={el => this.changeScene(el.props.scene)}
         >
-          <Text name='home' selectedIconStyle={styles.selectedIcon}>Hjem</Text>
-          <Text name='statistics' selectedIconStyle={styles.selectedIcon}>Stats</Text>
-          <Text name='logdata' selectedIconStyle={styles.selectedIcon}>+</Text>
-          <Text name='mindfulness' selectedIconStyle={styles.selectedIcon}>Mind</Text>
-          <Text name='sharing' selectedIconStyle={styles.selectedIcon}>Sharing</Text>
+          <Icon scene='home' name='home' size={20} selectedIconStyle={styles.selectedIcon} />
+          <Icon scene='statistics' name='bar-graph' selectedIconStyle={styles.selectedIcon} />
+          <Icon scene='logdata' name='circle-with-plus' size={25} selectedIconStyle={styles.selectedIcon} />
+          <Icon scene='mindfulness' name='emoji-happy' size={20} selectedIconStyle={styles.selectedIcon} />
+          <Icon scene='sharing' name='users' size={20} selectedIconStyle={styles.selectedIcon} />
         </Tabs>
       </View>
     )
