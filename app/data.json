@@ -1,4 +1,22 @@
 {
+  "user": {
+    "name": "Jens Jensen",
+    "age": 35,
+    "height": 180,
+    "restingHeartRate": 60,
+    "sharing": [
+      {
+        "name": "Doktor Doktorsen",
+        "type": "Fastlege",
+        "selected": true
+      },
+      {
+        "name": "Fysio Fysiosen",
+        "type": "Fysioterapaut",
+        "selected": false
+      }
+    ]
+  },
   "pai": [
     {
       "day": "2017-02-02",
