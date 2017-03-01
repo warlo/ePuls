@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import {
+  Dimensions,
   StyleSheet,
   View,
-  Text
+  Text,
+  Button,
+  Image
 } from 'react-native';
-import TabView from '../components/TabView';
-import StockLineChart from '../components/StockLineChart';
-import data from '../data.json';
+import { Actions } from 'react-native-router-flux';
+import logo from '../../../assets/images/logo-big.png';
 
-const Home = (props) => (
+const Launch = () => (
   <View style={styles.root}>
     <View style={styles.container}>
+      <Image source={logo} style={styles.logo} />
+      <Button title='Hjem' onPress={() => {Actions.tabbar(); Actions.home();}} />
       <Text style={styles.welcome}>
-        PAI: 90
+        LOGG INN
       </Text>
-      <StockLineChart data={data} />
     </View>
-    <TabView name={props.name} />
   </View>
 );
 
@@ -30,6 +32,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  logo: {
+    width: Dimensions.get('window').width/3,
+    resizeMode: 'contain'
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
@@ -37,4 +43,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home;
+export default Launch;

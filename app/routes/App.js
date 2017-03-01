@@ -6,20 +6,23 @@ import Statistics from './Statistics';
 import LogData from './LogData';
 import Mindfulness from './Mindfulness';
 import Sharing from './Sharing';
+import { connect } from 'react-redux';
+
+const ReduxRouter = connect()(Router);
 
 const App = () => (
-  <Router>
+  <ReduxRouter>
     <Scene key='root'>
       <Scene key='launch' title='Launch' component={Launch} initial hideNavBar />
-      <Scene key='tabbar' tabs={true} type={ActionConst.REPLACE}>
-        <Scene key='home' title='Hjem' component={Home} />
+      <Scene key='tabbar' tabs={true}>
+        <Scene key='home' title='Hjem' component={Home} initial />
         <Scene key='statistics' title='Statistikk' component={Statistics} />
         <Scene key='logdata' title='Logg data' component={LogData} />
         <Scene key='mindfulness' title='Mindfulness' component={Mindfulness} />
         <Scene key='sharing' title='Deling' component={Sharing} />
       </Scene>
     </Scene>
-  </Router>
+  </ReduxRouter>
 );
 
 export default App;

@@ -4,7 +4,7 @@ import {
   View,
   Text
 } from 'react-native';
-import TabView from '../components/TabView';
+import TabView from '../../components/TabView';
 
 const Mindfulness = (props) => (
   <View style={styles.root}>
@@ -13,7 +13,7 @@ const Mindfulness = (props) => (
         Mindfulness
       </Text>
     </View>
-    <TabView name={props.name} />
+    <TabView scene={props.scene} />
   </View>
 )
 

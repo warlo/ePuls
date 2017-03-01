@@ -15,28 +15,28 @@ class TabView extends Component {
     console.log('as1231d', name);
     switch (name) {
       case 'home': {
-        Actions.tabbar(name);
-        Actions.home(name);
+        Actions.tabbar();
+        Actions.home();
         break;
       }
       case 'statistics': {
-        Actions.tabbar(name);
-        Actions.statistics(name);
+        Actions.tabbar();
+        Actions.statistics();
         break;
       }
       case 'logdata': {
-        Actions.tabbar(name);
-        Actions.logdata(name);
+        //Actions.tabbar(name);
+        Actions.logdata();
         break;
       }
       case 'mindfulness': {
-        Actions.tabbar(name);
-        Actions.mindfulness(name);
+        //Actions.tabbar(name);
+        Actions.mindfulness();
         break;
       }
       case 'sharing': {
-        Actions.tabbar(name);
-        Actions.sharing(name);
+        //Actions.tabbar(name);
+        Actions.sharing();
         break;
       }
       default: {}
@@ -44,11 +44,11 @@ class TabView extends Component {
   }
 
   render() {
-    console.log('asd', this.props);
+    console.log('TABVIEW', this.props);
     return (
       <View style={styles.container}>
         <Tabs
-          selected={this.props.name}
+          selected={this.props.scene}
           onSelect={el => this.changeScene(el.props.name)}
         >
           <View name='home' selectedIconStyle={styles.selectedIcon}>
