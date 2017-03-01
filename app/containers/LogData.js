@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  TextInput,
+  Button
 } from 'react-native';
 import TabView from '../components/TabView';
 
@@ -12,6 +14,19 @@ const LogData = (props) => (
       <Text style={styles.welcome}>
         LogData
       </Text>
+      <View>
+        <Text>Vekt</Text>
+        <TextInput
+          style={{height: 40, width: 60, borderColor: 'gray', borderWidth: 1}}
+        />
+      </View>
+      <View>
+        <Text>Midjemål</Text>
+        <TextInput
+          style={{height: 40, width: 60, borderColor: 'gray', borderWidth: 1}}
+        />
+      </View>
+      <Button title='Send' />
     </View>
     <TabView name={props.name} />
   </View>

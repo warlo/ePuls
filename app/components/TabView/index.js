@@ -10,16 +10,13 @@ import Tabs from 'react-native-tabs';
 import Icon from 'react-native-vector-icons/Entypo';
 
 class TabView extends Component {
-  state = {
-    page: 'first'
-  }
 
   changeScene = (name) => {
     console.log('as1231d', name);
     switch (name) {
       case 'home': {
-        Actions.tabbar({name});
-        Actions.home({name});
+        Actions.tabbar(name);
+        Actions.home(name);
         break;
       }
       case 'statistics': {
@@ -28,19 +25,16 @@ class TabView extends Component {
         break;
       }
       case 'logdata': {
-        console.log('1', name);
         Actions.tabbar(name);
         Actions.logdata(name);
         break;
       }
       case 'mindfulness': {
-        console.log('2', name);
         Actions.tabbar(name);
         Actions.mindfulness(name);
         break;
       }
       case 'sharing': {
-        console.log('3', name);
         Actions.tabbar(name);
         Actions.sharing(name);
         break;
@@ -50,18 +44,28 @@ class TabView extends Component {
   }
 
   render() {
-    console.log('asd', this.state, this.props);
+    console.log('asd', this.props);
     return (
       <View style={styles.container}>
         <Tabs
           selected={this.props.name}
-          onSelect={el => this.changeScene(el.props.scene)}
+          onSelect={el => this.changeScene(el.props.name)}
         >
-          <Icon scene='home' name='home' size={20} selectedIconStyle={styles.selectedIcon} />
-          <Icon scene='statistics' name='bar-graph' selectedIconStyle={styles.selectedIcon} />
-          <Icon scene='logdata' name='circle-with-plus' size={25} selectedIconStyle={styles.selectedIcon} />
-          <Icon scene='mindfulness' name='emoji-happy' size={20} selectedIconStyle={styles.selectedIcon} />
-          <Icon scene='sharing' name='users' size={20} selectedIconStyle={styles.selectedIcon} />
+          <View name='home' selectedIconStyle={styles.selectedIcon}>
+            <Icon name='home' size={20} />
+          </View>
+          <View name='statistics' selectedIconStyle={styles.selectedIcon}>
+            <Icon name='bar-graph' />
+          </View>
+          <View name='logdata' selectedIconStyle={styles.selectedIcon}>
+            <Icon name='circle-with-plus' size={25} />
+          </View>
+          <View name='mindfulness' selectedIconStyle={styles.selectedIcon}>
+            <Icon name='emoji-happy' size={20} />
+          </View>
+          <View name='sharing' selectedIconStyle={styles.selectedIcon}>
+            <Icon name='users' size={20} />
+          </View>
         </Tabs>
       </View>
     )
