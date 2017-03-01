@@ -5,7 +5,8 @@ import {
   Text
 } from 'react-native';
 import TabView from '../components/TabView';
-import Chart from '../components/Chart';
+import StockLineChart from '../components/StockLineChart';
+import data from '../data.json';
 
 const Statistics = (props) => (
   <View style={styles.root}>
@@ -14,7 +15,7 @@ const Statistics = (props) => (
       <Text style={styles.welcome}>
         Statistics
       </Text>
-      <Chart />
+      <StockLineChart data={data} />
     </View>
     <TabView name={props.name} />
   </View>
