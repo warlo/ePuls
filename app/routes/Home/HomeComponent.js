@@ -10,7 +10,6 @@ import StockLineChart from '../../components/StockLineChart';
 import { Actions, ActionConst } from 'react-native-router-flux';
 
 const Home = (props) => {
-  console.log('homeprops', props);
   return (
   <View style={styles.root}>
     <View style={styles.container}>

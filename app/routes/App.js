@@ -20,7 +20,9 @@ const App = () => (
       <Scene
         key='tabbar'
         tabs={true}
-        tabBarSelectedItemStyle={{ borderTopWidth: 2, borderTopColor: 'red' }}>
+        tabBarSelectedItemStyle={{ borderTopWidth: 2, borderTopColor: 'red' }}
+        type={ActionConst.RESET}
+      >
         <Scene
           key='home'
           title='Hjem'
