@@ -6,7 +6,6 @@ import {
   Switch,
   TextInput
 } from 'react-native';
-import TabView from '../../components/TabView';
 import data from '../../data.json';
 
 const SharedField = ({ name, type, selected }) => (
@@ -46,7 +45,6 @@ const Sharing = (props) => (
         ))}
       </View>
     </View>
-    <TabView scene={props.scene} />
   </View>
 );
 

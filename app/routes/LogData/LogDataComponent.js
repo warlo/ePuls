@@ -6,7 +6,6 @@ import {
   TextInput,
   Button
 } from 'react-native';
-import TabView from '../../components/TabView';
 
 const LogData = (props) => (
   <View style={styles.root}>
@@ -28,7 +27,6 @@ const LogData = (props) => (
       </View>
       <Button title='Send' />
     </View>
-    <TabView scene={props.scene} />
   </View>
 )
 

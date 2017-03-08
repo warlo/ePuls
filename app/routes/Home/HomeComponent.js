@@ -6,9 +6,8 @@ import {
   Text,
   Button
 } from 'react-native';
-import TabView from '../../components/TabView';
 import StockLineChart from '../../components/StockLineChart';
-import { Actions } from 'react-native-router-flux';
+import { Actions, ActionConst } from 'react-native-router-flux';
 
 const Home = (props) => {
   console.log('homeprops', props);
@@ -19,9 +18,8 @@ const Home = (props) => {
         PAI: 90
       </Text>
       <StockLineChart data={props.data} />
-      <Button title='Hjem' onPress={() => {Actions.tabbar(); Actions.home();}} />
+      <Button title='Hjem' onPress={() => {Actions.tabbar();}} />
     </View>
-    <TabView scene={props.scene} />
   </View>
 )}
 

@@ -7,19 +7,51 @@ import LogData from './LogData';
 import Mindfulness from './Mindfulness';
 import Sharing from './Sharing';
 import { connect } from 'react-redux';
+import Icon from 'react-native-vector-icons/Entypo';
 
 const ReduxRouter = connect()(Router);
+
+const tabIcon = (icon, size=20) => (<Icon name={icon} size={size} />);
 
 const App = () => (
   <ReduxRouter>
     <Scene key='root'>
       <Scene key='launch' title='Launch' component={Launch} initial hideNavBar />
-      <Scene key='tabbar' tabs={true}>
-        <Scene key='home' title='Hjem' component={Home} initial />
-        <Scene key='statistics' title='Statistikk' component={Statistics} />
-        <Scene key='logdata' title='Logg data' component={LogData} />
-        <Scene key='mindfulness' title='Mindfulness' component={Mindfulness} />
-        <Scene key='sharing' title='Deling' component={Sharing} />
+      <Scene
+        key='tabbar'
+        tabs={true}
+        tabBarSelectedItemStyle={{ borderTopWidth: 2, borderTopColor: 'red' }}>
+        <Scene
+          key='home'
+          title='Hjem'
+          icon={() => tabIcon('home')}
+          component={Home}
+          initial
+        />
+        <Scene
+          key='statistics'
+          title='Statistikk'
+          icon={() => tabIcon('bar-graph')}
+          component={Statistics}
+        />
+        <Scene
+          key='logdata'
+          title='Logg data'
+          icon={() => tabIcon('circle-with-plus', 25)}
+          component={LogData}
+        />
+        <Scene
+          key='mindfulness'
+          title='Mindfulness'
+          icon={() => tabIcon('emoji-happy')}
+          component={Mindfulness}
+        />
+        <Scene
+          key='sharing'
+          title='Deling'
+          icon={() => tabIcon('users')}
+          component={Sharing}
+        />
       </Scene>
     </Scene>
   </ReduxRouter>
