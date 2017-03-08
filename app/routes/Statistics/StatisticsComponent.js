@@ -5,7 +5,6 @@ import {
   Text
 } from 'react-native';
 import StockLineChart from '../../components/StockLineChart';
-import data from '../../data.json';
 
 const Statistics = (props) => (
   <View style={styles.root}>
@@ -14,7 +13,7 @@ const Statistics = (props) => (
       <Text style={styles.welcome}>
         Statistics
       </Text>
-      <StockLineChart data={data} />
+      <StockLineChart pai={props.pai} />
     </View>
   </View>
 );

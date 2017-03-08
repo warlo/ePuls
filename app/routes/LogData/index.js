@@ -8,12 +8,12 @@ const LogData = (props) => (
   <LogDataComponent {...props} />
 );
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, { routes }) => ({
+  routes,
   scene: state.routes.scene.name,
   data
 })
 
-export default connect((
-  ({ routes }) => ({ routes }), mapStateToProps),
+export default connect(mapStateToProps,
   null
 )(LogData);;

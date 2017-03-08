@@ -44,18 +44,15 @@ export default function callAPI({
       json,
     };
 
-    const jwt = getState().auth.token;
+    /*const jwt = getState().auth.token;
     if (jwt && requiresAuthentication) {
       options.headers.Authorization = `JWT ${jwt}`;
-    }
+    }*/
 
     function normalizeJsonResponse(jsonResponse = {}) {
-      const { results, actionGrant } = jsonResponse;
+      const { results } = jsonResponse;
       const payload = Array.isArray(results) ? results : jsonResponse;
-      return schema ? {
-        ...normalize(payload, schema),
-        actionGrant
-      } : payload;
+      return schema ? normalize(payload, schema) : payload;
     }
 
     // @todo: better id gen (cuid or something)

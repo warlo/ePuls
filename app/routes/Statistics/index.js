@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StatisticsComponent from './StatisticsComponent';
-import data from '../../data.json';
-
+import { selectStatisticById, selectPaiForStatistic } from 'app/reducers/statistics';
 
 const Statistics = (props) => (
   <StatisticsComponent {...props} />
 );
 
-const mapStateToProps = (state) => ({
-  scene: state.routes.scene.name,
-  data
-})
+const mapStateToProps = (state) => {
+  const statistic = selectStatisticById(state, { userId: 1 });
+  const pai = selectPaiForStatistic(state, { userId: 1 });
+  return {
+    statistic,
+    pai
+  }
+};
 
-export default connect((
-  ({ routes }) => ({ routes }), mapStateToProps),
-  null
-)(Statistics);;
+export default connect(mapStateToProps, null)(Statistics);

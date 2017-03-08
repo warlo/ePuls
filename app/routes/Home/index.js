@@ -1,19 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import HomeComponent from './HomeComponent';
 import data from '../../data.json';
+import { fetch } from 'app/actions/StatisticsActions';
+import { selectStatisticById, selectPaiForStatistic } from 'app/reducers/statistics';
 
 
 const Home = (props) => (
   <HomeComponent {...props} />
 );
 
-const mapStateToProps = (state) => ({
-  scene: state.routes.scene.name,
-  data
-})
+const mapStateToProps = (state, props) => {
+  const statistic = selectStatisticById(state, { userId: 1 });
+  const pai = selectPaiForStatistic(state, { userId: 1 });
+  return {
+    data,
+    statistic,
+    pai
+  };
+};
 
-export default connect((
-  ({ routes }) => ({ routes }), mapStateToProps),
-  null
+const mapDispatchToProps = {
+  fetch
+};
+
+export default connect(mapStateToProps,
+  mapDispatchToProps
 )(Home);;

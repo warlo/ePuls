@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { StockLine } from 'react-native-pathjs-charts';
 import moment from 'moment';
 
@@ -50,9 +50,12 @@ let options = {
 }
 
 
-const Chart = ({ data }) => {
+const Chart = ({ pai }) => {
+  if (pai.length === 0) {
+    return <View><Text>Loading ...</Text></View>
+  }
 
-  const test = [data.pai.map((elem, i) => ({
+  const test = [pai.map((elem, i) => ({
     x: i,
     y: elem.value
   }))];

@@ -17,7 +17,8 @@ const createStoreWithMiddleware = applyMiddleware(
   loggerMiddleware
 )(createStore);
 
-const store = createStoreWithMiddleware(rootReducer, autoRehydrate());
+//const store = createStoreWithMiddleware(rootReducer, autoRehydrate());
+const store = createStoreWithMiddleware(rootReducer);
 persistStore(store, { storage: AsyncStorage });
 
 export default store;
