@@ -1,3 +1,3 @@
 export default {
-  serverUrl: 'http://localhost:8080/api/'
+  serverUrl: 'http://34.253.33.171/api'
 };

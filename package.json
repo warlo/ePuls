@@ -13,7 +13,6 @@
     "normalizr": "^2.3.1",
     "react": "~15.4.0",
     "react-native": "0.41.2",
-    "react-native-chart": "^1.0.8-beta",
     "react-native-pathjs-charts": "0.0.26",
     "react-native-router-flux": "^3.37.0",
     "react-native-tabs": "^1.0.9",

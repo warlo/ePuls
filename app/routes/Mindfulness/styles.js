@@ -5,18 +5,27 @@ const styles = StyleSheet.create({
     flex: 1
   },
   container: {
+    marginTop: 50,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  header: {
+    marginTop: 15,
+    height: 50,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  scroll: {
+    alignSelf: 'stretch',
+    height: 200,
+  },
   text: {
     fontSize: 30,
     textAlign: 'center',
     margin: 10,
-  },
-  pai: {
-    fontSize: 50,
   }
 });
 

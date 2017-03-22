@@ -51,7 +51,7 @@ let options = {
 
 
 const Chart = ({ pai }) => {
-  if (pai.length === 0) {
+  if (!pai || pai.length === 0) {
     return <View><Text>Loading ...</Text></View>
   }
 

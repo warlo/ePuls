@@ -1,50 +1,43 @@
+import styles from './styles';
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   View,
   Text,
   TextInput,
   Button
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo';
+
+const onSubmit = () => {
+  console.log('Pressed');
+}
 
 const LogData = (props) => (
   <View style={styles.root}>
     <View style={styles.container}>
-      <Text style={styles.welcome}>
-        LogData
-      </Text>
-      <View>
-        <Text>Vekt</Text>
-        <TextInput
-          style={{height: 40, width: 60, borderColor: 'gray', borderWidth: 1}}
-        />
+      <View style={styles.header}>
+        <Icon name='plus' size={40} />
+        <Text style={styles.headerText}>
+          LEGG TIL
+        </Text>
       </View>
-      <View>
-        <Text>Midjemål</Text>
-        <TextInput
-          style={{height: 40, width: 60, borderColor: 'gray', borderWidth: 1}}
-        />
+      <View style={styles.content}>
+        <View style={styles.row}>
+          <View style={styles.textElement}>
+            <Text style={styles.text}>Vekt</Text>
+          </View>
+          <TextInput style={styles.input} />
+        </View>
+        <View style={styles.row}>
+          <View style={styles.textElement}>
+            <Text style={styles.text}>Midjemål</Text>
+          </View>
+          <TextInput style={styles.input} />
+        </View>
+        <Button onPress={onSubmit} title='Send' />
       </View>
-      <Button title='Send' />
     </View>
   </View>
-)
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  }
-});
+);
 
 export default LogData;

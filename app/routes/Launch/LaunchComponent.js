@@ -14,10 +14,7 @@ const Launch = () => (
   <View style={styles.root}>
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} />
-      <Button title='Hjem' onPress={() => {Actions.tabbar(); Actions.home();}} />
-      <Text style={styles.welcome}>
-        LOGG INN
-      </Text>
+      <Button title='Logg inn' onPress={() => {Actions.tabbar(); Actions.home();}} />
     </View>
   </View>
 );

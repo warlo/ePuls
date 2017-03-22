@@ -1,38 +1,41 @@
+import styles from './styles';
 import React from 'react';
 import {
-  StyleSheet,
   View,
-  Text
+  Text,
+  ScrollView
 } from 'react-native';
-import StockLineChart from '../../components/StockLineChart';
+import Row from 'app/components/Row';
+import Icon from 'react-native-vector-icons/Entypo';
+
+const data = [
+  {
+    title: 'PAI'
+  }, {
+    title: 'Motivasjon'
+  }, {
+    title: 'Skritt'
+  }, {
+    title: 'Vekt'
+  }, {
+    title: 'Søvn'
+  }
+];
 
 const Statistics = (props) => (
   <View style={styles.root}>
-    <Text>ASD</Text>
     <View style={styles.container}>
-      <Text style={styles.welcome}>
-        Statistics
-      </Text>
-      <StockLineChart pai={props.pai} />
+      <View style={styles.header}>
+        <Icon name='bar-graph' size={30} />
+        <Text style={styles.text}>
+          Statistikk
+        </Text>
+      </View>
+      <ScrollView style={styles.scroll}>
+        {data.map((elem, i) => (<Row key={i} title={elem.title} />))}
+      </ScrollView>
     </View>
   </View>
 );
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  }
-});
 
 export default Statistics;

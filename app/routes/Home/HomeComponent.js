@@ -6,7 +6,8 @@ import {
   Text,
   Button
 } from 'react-native';
-import StockLineChart from '../../components/StockLineChart';
+import StockLineChart from 'app/components/StockLineChart';
+import BarChart from 'app/components/BarChart';
 import { Actions, ActionConst } from 'react-native-router-flux';
 
 class Home extends Component {
@@ -20,11 +21,11 @@ class Home extends Component {
     return (
       <View style={styles.root}>
         <View style={styles.container}>
-          <Text style={styles.welcome}>
-            PAI: 90
+          <Text style={styles.text}>
+            PAI
           </Text>
-          <StockLineChart pai={this.props.pai} />
-          <Button title='Hjem' onPress={() => {Actions.tabbar();}} />
+          <Text style={styles.pai}>90</Text>
+          <BarChart data={this.props.pai} />
         </View>
       </View>
     )

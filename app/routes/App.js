@@ -8,6 +8,7 @@ import Mindfulness from './Mindfulness';
 import Sharing from './Sharing';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/Entypo';
+import IonIcon from 'react-native-vector-icons/Ionicons';
 
 const ReduxRouter = connect()(Router);
 
@@ -45,7 +46,7 @@ const App = () => (
         <Scene
           key='mindfulness'
           title='Mindfulness'
-          icon={() => tabIcon('emoji-happy')}
+          icon={() => (<IonIcon name='ios-sunny' size={25} />)}
           component={Mindfulness}
         />
         <Scene
