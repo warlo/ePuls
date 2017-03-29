@@ -14,6 +14,14 @@ const routes = (state = initialState, action) => {
         scene: action.scene,
       });
     }
+    case ActionConst.JUMP: {
+      if (action.user) {
+        return {
+          ...state,
+          user: action.user
+        }
+      }
+    }
     default:
       return state;
   }

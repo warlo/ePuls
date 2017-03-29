@@ -8,8 +8,9 @@ const Statistics = (props) => (
 );
 
 const mapStateToProps = (state) => {
-  const statistic = selectStatisticById(state, { userId: 1 });
-  const pai = selectPaiForStatistic(state, { userId: 1 });
+  const user = state.routes.user;
+  const statistic = selectStatisticById(state, { userId: user });
+  const pai = selectPaiForStatistic(state, { userId: user });
   return {
     statistic,
     pai

@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import HomeComponent from './HomeComponent';
 import { fetch } from 'app/actions/StatisticsActions';
 import { selectStatisticById, selectPaiForStatistic } from 'app/reducers/statistics';
+import { selectTotalPai } from 'app/reducers/pai';
 
 
 const Home = (props) => (
@@ -11,11 +12,16 @@ const Home = (props) => (
 );
 
 const mapStateToProps = (state, props) => {
-  const statistic = selectStatisticById(state, { userId: 1 });
-  const pai = selectPaiForStatistic(state, { userId: 1 });
+  const user = state.routes.user || 1;
+  const statistic = selectStatisticById(state, { userId: user });
+  const pai = selectPaiForStatistic(state, { userId: user });
+  const totalPai = selectTotalPai(state);
+  console.log('tota', totalPai);
   return {
+    user,
     statistic,
-    pai
+    pai,
+    totalPai
   };
 };
 

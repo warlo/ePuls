@@ -10,10 +10,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
   text: {
     fontSize: 30,
     textAlign: 'center',
     margin: 10,
+  },
+  subtext: {
+    fontSize: 15,
   },
   pai: {
     fontSize: 50,

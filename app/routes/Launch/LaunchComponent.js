@@ -14,7 +14,10 @@ const Launch = () => (
   <View style={styles.root}>
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} />
-      <Button title='Logg inn' onPress={() => {Actions.tabbar(); Actions.home();}} />
+      <View style={{ flexDirection: 'row' }}>
+        <Button title='Bruker 1' onPress={() => {Actions.tabbar(); Actions.home({ 'user': 1 });}} />
+        <Button title='Bruker 2' onPress={() => {Actions.tabbar(); Actions.home({ 'user': 2 });}} />
+      </View>
     </View>
   </View>
 );
