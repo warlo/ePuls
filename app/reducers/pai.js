@@ -10,8 +10,14 @@ export default createEntityReducer({
 });
 
 export const selectTotalPai = createSelector(
+  (state) => state.statistics.byId,
   (state) => state.pai.byId,
-  (paiById) => (
-    Object.values(paiById) || []).reduce((a, b) => a + b.value, 0
-  )
+  (state, props) => props.userId,
+  (statisticsById, paiById, userId) => {
+    if (statisticsById[userId] === undefined) {
+      return
+    }
+    const items = statisticsById[userId].pai.map(id => paiById[id]);
+    return Object.values(items || []).reduce((a, b) => a + b.value, 0);
+  }
 );

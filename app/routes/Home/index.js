@@ -16,7 +16,7 @@ const mapStateToProps = (state, props) => {
   const user = state.routes.user || 1;
   const statistic = selectStatisticById(state, { userId: user });
   const pai = selectPaiForStatistic(state, { userId: user });
-  const totalPai = selectTotalPai(state);
+  const totalPai = selectTotalPai(state, { userId: user });
   const peripheral = state.ble.peripheral;
   const characteristic = state.ble.characteristic;
   const bpm = state.ble.bpm;
