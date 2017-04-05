@@ -29,6 +29,7 @@ const App = () => (
           title='Hjem'
           icon={() => tabIcon('home')}
           component={Home}
+          hideNavBar
           initial
         />
         <Scene
@@ -36,24 +37,28 @@ const App = () => (
           title='Statistikk'
           icon={() => tabIcon('bar-graph')}
           component={Statistics}
+          hideNavBar
         />
         <Scene
           key='logdata'
           title='Logg data'
           icon={() => tabIcon('circle-with-plus', 25)}
           component={LogData}
+          hideNavBar
         />
         <Scene
           key='mindfulness'
           title='Mindfulness'
           icon={() => (<IonIcon name='ios-sunny' size={25} />)}
           component={Mindfulness}
+          hideNavBar
         />
         <Scene
           key='sharing'
           title='Deling'
           icon={() => tabIcon('users')}
           component={Sharing}
+          hideNavBar
         />
       </Scene>
     </Scene>

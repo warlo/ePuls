@@ -1,3 +1,3 @@
 export default {
-  serverUrl: 'http://34.253.33.171/api'
+  serverUrl: 'http://10.22.62.85:8080/api'
 };

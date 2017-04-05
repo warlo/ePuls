@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingTop: 80,
+    paddingTop: 40,
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
   shareField: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 5,
   }
 });
 

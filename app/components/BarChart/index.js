@@ -8,7 +8,7 @@ class BarChart extends Component {
 
     let options = {
       width: 300,
-      height: 300,
+      height: 375,
       margin: {
         top: 20,
         left: 25,
@@ -31,7 +31,7 @@ class BarChart extends Component {
         orient: 'bottom',
         label: {
           fontFamily: 'Arial',
-          fontSize: 8,
+          fontSize: 12,
           fontWeight: true,
           fill: '#34495E'
         }
@@ -45,7 +45,7 @@ class BarChart extends Component {
         orient: 'left',
         label: {
           fontFamily: 'Arial',
-          fontSize: 8,
+          fontSize: 14,
           fontWeight: true,
           fill: '#34495E'
         }

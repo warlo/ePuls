@@ -15,8 +15,17 @@ const Launch = () => (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} />
       <View style={{ flexDirection: 'row' }}>
-        <Button title='Bruker 1' onPress={() => {Actions.tabbar(); Actions.home({ 'user': 1 });}} />
-        <Button title='Bruker 2' onPress={() => {Actions.tabbar(); Actions.home({ 'user': 2 });}} />
+        <Button
+          title='Jens Jensen'
+          color="#2980B9"
+          onPress={() => {Actions.tabbar(); Actions.home({ 'user': 1 });}}
+        />
+        <Button
+          title='Hans Hansen'
+          color="#2980B9"
+          onPress={() => {Actions.tabbar(); Actions.home({ 'user': 2 });}}
+        />
+
       </View>
     </View>
   </View>

@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/Entypo';
 const SharedField = ({ index, name, type, selected, handleChange }) => (
   <View style={styles.shareField}>
     <Switch value={selected} onValueChange={(value) => handleChange(value, index)} />
-    <Text>
+    <Text style={{ marginLeft: 10, fontSize: 14 }}>
       {type}: {name}
     </Text>
   </View>

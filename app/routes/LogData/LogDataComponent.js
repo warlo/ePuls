@@ -34,7 +34,7 @@ const LogData = (props) => (
           </View>
           <TextInput style={styles.input} />
         </View>
-        <Button onPress={onSubmit} title='Send' />
+        <Button onPress={onSubmit} color="#2980B9" title='Send' />
       </View>
     </View>
   </View>
