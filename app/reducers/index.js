@@ -3,11 +3,13 @@ import { combineReducers } from 'redux';
 import routes from './routes';
 import statistics from './statistics';
 import pai from './pai';
+import ble from './ble';
 
 const rootReducer = combineReducers({
   routes,
   statistics,
-  pai
+  pai,
+  ble
 });
 
 export const statisticsSchema = new Schema('statistics', { idAttribute: 'id' });

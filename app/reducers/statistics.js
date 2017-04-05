@@ -4,10 +4,17 @@ import { createSelector } from 'reselect';
 
 const initialState = {
   byId: {},
+  characteristic: null
 }
 
 function mutate(state, action) {
   switch (action.type) {
+    case Statistics.SET_CHARACTERISTIC: {
+      return {
+        ...state,
+        characteristic: action.payload.characteristic
+      }
+    }
     default: {
       return state
     }

@@ -4,9 +4,12 @@ import {
   View,
   Text,
   Switch,
-  TextInput
+  TextInput,
+  Button,
+  Keyboard,
+  TouchableWithoutFeedback
 } from 'react-native';
-import data from '../../data.json';
+import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Entypo';
 
 const SharedField = ({ index, name, type, selected, handleChange }) => (
@@ -49,40 +52,60 @@ class Sharing extends Component {
   render() {
     const { name, age, height, restingHeartRate } = this.props.statistic;
     return (
-      <View style={styles.root}>
-        <View style={styles.container}>
-          <View style={styles.header}>
-            <Icon name='users' size={30} />
-            <Text style={styles.text}>
-              Profil
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.root}>
+          <View style={styles.container}>
+            <View style={styles.header}>
+              <Icon name='users' size={30} />
+              <Text style={styles.text}>
+                Profil
+              </Text>
+            </View>
+            <Text style={styles.title}>
+              {name}
             </Text>
-          </View>
-          <Text style={styles.title}>
-            {name}
-          </Text>
-          <Text style={styles.smallTitle}>
-            Alder: {age}
-          </Text>
-          <View style={{ paddingTop: 5 }}>
-            <Text>Høyde</Text>
-            <TextInput style={styles.input} value={height.toString()} />
-          </View>
-          <View style={{ paddingTop: 5 }}>
-            <Text>Hvilepuls</Text>
-            <TextInput style={styles.input} value={restingHeartRate.toString()} />
-          </View>
-          <View style={{ paddingTop: 5 }}>
-            <Text>Makspuls</Text>
-            <TextInput style={styles.input} />
-          </View>
-          <View style={styles.sharingContent}>
-            <Text>Delt med:</Text>
-            {this.state.sharing.map((elem, i) => (
-              <SharedField key={i} index={i} handleChange={this.handleChange} {...elem} />
-            ))}
+            <Text style={styles.smallTitle}>
+              Alder: {age}
+            </Text>
+            <View style={{ paddingTop: 5 }}>
+              <Text>Høyde</Text>
+              <TextInput
+                keyboardType={'numeric'}
+                style={styles.input}
+                value={height.toString()}
+              />
+            </View>
+            <View style={{ paddingTop: 5 }}>
+              <Text>Hvilepuls</Text>
+              <TextInput
+                keyboardType={'numeric'}
+                style={styles.input}
+                value={restingHeartRate.toString()}
+              />
+            </View>
+            <View style={{ paddingTop: 5 }}>
+              <Text>Makspuls</Text>
+              <TextInput
+                keyboardType={'numeric'}
+                style={styles.input}
+              />
+            </View>
+            <View style={styles.sharingContent}>
+              <Text>Delt med:</Text>
+              {this.state.sharing.map((elem, i) => (
+                <SharedField key={i} index={i} handleChange={this.handleChange} {...elem} />
+              ))}
+            </View>
+            <View style={{ alignItems: 'flex-end' }}>
+              <Button
+                title='LOGG UT'
+                color="#2980B9"
+                onPress={() => {Actions.launch({type: 'reset'});}}
+              />
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     )
   }
 }
